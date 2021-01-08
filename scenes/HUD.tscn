@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, -1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 77.9204
+margin_top = -546.643
+margin_right = 106.92
+margin_bottom = -532.643
+rect_scale = Vector2( 30, 40 )
+text = "TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}

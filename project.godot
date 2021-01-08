@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ArrayUtils",
+"language": "GDScript",
+"path": "res://addons/SIsilicon.3d.text/array_utils.gd"
+} ]
+_global_script_class_icons={
+"ArrayUtils": ""
+}
+
+[application]
+
+config/name="Virtual Future"
+run/main_scene="res://places/Space.tscn"
+config/icon="res://textures/unused/icon.png"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
+[gdnative]
+
+singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
+
+[physics]
+
+common/physics_fps=90
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

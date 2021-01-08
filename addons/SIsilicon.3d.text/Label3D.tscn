@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/SIsilicon.3d.text/label_3d.gd" type="Script" id=1]
+[ext_resource path="res://addons/SIsilicon.3d.text/icon_label_3d.svg" type="Texture" id=2]
+[ext_resource path="res://fonts/nulshock bd.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Label3D" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.197355, 1.90471, -0.0675241 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+text = "This is a test text."
+text_size = 2.0
+font = SubResource( 1 )
+align = 2
+color = Color( 0.603922, 0.603922, 0.603922, 1 )
+metallic = 0.0
+roughness = 0.5
+emission_color = Color( 0.188235, 1, 0.160784, 1 )
+emission_strength = 0.99
+extrude = 0.0
+max_steps = 256
+step_size = 1.0
