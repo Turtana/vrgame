@@ -15,7 +15,6 @@ var camera
 
 var startingpos
 
-
 func _ready():
 	
 	connect("button_pressed", self, "button_pressed")
@@ -25,7 +24,7 @@ func _ready():
 	body = find_parent("PlayerBody")
 	camera = get_parent().get_node("Player_Camera")
 	
-	startingpos = find_parent("PlayerBody").translation
+	startingpos = body.translation
 
 func _physics_process(delta):
 	
@@ -38,8 +37,6 @@ func _physics_process(delta):
 		PI/4,
 		false
 	)
-	
-	
 	
 		# Controller velocity
 	# --------------------
@@ -84,6 +81,7 @@ func _physics_process(delta):
 
 	var movement_vector = (trackpad_vector + joystick_vector)
 
+	# Change this. Now the movement is based on headset orientation, not controller orientation. Some people including me would prefer other way around.
 	var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
 	var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
 
@@ -100,7 +98,7 @@ func _physics_process(delta):
 func button_pressed(button_index):
 	print(button_index)
 	
-	# resets the player to origin. Probably not useful in final game. Mapped to menu button.
+	# resets the player to the starting position. Probably not useful in the final game. Mapped to menu button.
 	if button_index == 14:
 		body.translation = startingpos
 

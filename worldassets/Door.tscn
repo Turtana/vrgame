@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://worldassets/materials/Door.tres" type="Material" id=1]
 [ext_resource path="res://worldassets/materials/DoorHinge.tres" type="Material" id=2]
 [ext_resource path="res://worldassets/materials/DoorR.tres" type="Material" id=3]
 [ext_resource path="res://worldassets/Door.gd" type="Script" id=4]
-[ext_resource path="res://textures/walls floors etc/generic_wall.tres" type="Material" id=5]
+[ext_resource path="res://worldassets/materials/generic_wall.tres" type="Material" id=5]
 [ext_resource path="res://addons/SIsilicon.3d.text/Label3D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://worldassets/Button.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.15263, 0.581233, 1 )
@@ -21,7 +22,12 @@ extents = Vector3( 0.151542, 0.419925, 0.374861 )
 extents = Vector3( 2, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=5]
-albedo_color = Color( 0, 0.0509804, 0.45098, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0, 0.0235294, 0.196078, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.282781, 1, 0.161135 )
@@ -30,7 +36,7 @@ extents = Vector3( 0.282781, 1, 0.161135 )
 script = ExtResource( 4 )
 
 [node name="DoorL" type="CSGBox" parent="."]
-transform = Transform( 0.9, 0, 0, 0, -3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0.831159, 0.531026 )
+transform = Transform( 0.9, 0, 0, 0, -3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0.831159, 0.529297 )
 width = 0.3
 height = 1.5
 depth = 2.25
@@ -78,7 +84,7 @@ sides = 6
 material = ExtResource( 2 )
 
 [node name="DoorL2" type="CSGBox" parent="DoorR/CSGCylinder2"]
-transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0, -0.00316882, 0.592255 )
+transform = Transform( 0, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -5.96046e-08, -0.00316882, 0.592255 )
 width = 1.17524
 height = 2.44198
 depth = 0.35
@@ -180,14 +186,19 @@ shape = SubResource( 6 )
 
 [node name="TextA" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 1.06581e-14, -1, 0, 1, 1.06581e-14, 1, 4.6588e-22, -4.37114e-08, -0.216774, 1.80386, 0 )
-text = "testiteksti"
+text = "a"
 text_size = 0.8
 
 [node name="TextB" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, -1.06581e-14, 1, 0, 1, 1.06581e-14, -1, 4.6588e-22, -4.37114e-08, 0.215623, 1.80386, 0 )
-text = "kirjainrimpsu"
+text = "b"
 text_size = 0.8
 
+[node name="ButtonB" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.243415, 0.900323, -0.897817 )
+
+[node name="ButtonA" parent="." instance=ExtResource( 7 )]
+transform = Transform( 2.50343e-07, 0, -1, 0, 1, 0, 1, 0, 2.50343e-07, -0.243112, 0.900323, 0.870996 )
+
 [node name="Tween" type="Tween" parent="."]
-[connection signal="body_entered" from="MotionDetector" to="." method="open_door"]
 [connection signal="body_exited" from="MotionDetector" to="." method="close_door"]

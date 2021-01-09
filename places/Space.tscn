@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://worldassets/Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://worldassets/Ceiling.tscn" type="PackedScene" id=2]
 [ext_resource path="res://worldassets/Floor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/PlayerBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/PlayerBody.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/space.jpg" type="Texture" id=5]
 [ext_resource path="res://places/VrInit.gd" type="Script" id=6]
 [ext_resource path="res://worldassets/InvisibleWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://worldassets/Crate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://worldassets/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://worldassets/Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://NPC.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
@@ -173,13 +175,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8 )
 
 [node name="Floor23" parent="TerrainHolder" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 10 )
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 4, 0, 10 )
 
 [node name="Floor25" parent="TerrainHolder" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 8 )
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 6, 0, 8 )
 
 [node name="Floor24" parent="TerrainHolder" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 12 )
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 4, 0, 12 )
 
 [node name="Floor14" parent="TerrainHolder" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
@@ -371,3 +373,9 @@ textB = "varasto"
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 4.74413 )
 textA = "Quarters"
 textB = "Warehouse"
+
+[node name="Button" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.99956, 0, 0.0296663, 0, 1, 0, -0.0296663, 0, -0.99956, -4, 1, 2.97564 )
+
+[node name="NPC" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.637155, 0, 0.770736, 0, 1, 0, -0.770736, 0, -0.637155, 0.0501554, 0, 11.3758 )

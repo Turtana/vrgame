@@ -8,6 +8,5 @@ func _ready():
 		if VR and VR.initialize():
 			get_viewport().arvr = true
 			get_viewport().hdr = false
-			
 			OS.vsync_enabled = false
 			Engine.target_fps = 90
