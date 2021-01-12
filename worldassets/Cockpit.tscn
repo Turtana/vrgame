@@ -1,0 +1,280 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://textures/walls floors etc/beam.png" type="Texture" id=1]
+[ext_resource path="res://textures/walls floors etc/beamnormal.png" type="Texture" id=2]
+[ext_resource path="res://worldassets/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://worldassets/walls/Railing.tscn" type="PackedScene" id=4]
+[ext_resource path="res://worldassets/FloorHalf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://worldassets/walls/CockpitBackWall.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+metallic = 1.0
+roughness = 0.55
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+
+[node name="Cockpit" type="Spatial"]
+
+[node name="Beams" type="Spatial" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 3, 0 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox20" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 2, 1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox18" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 1, 1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox19" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1, 1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 3, -2 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox21" type="CSGBox" parent="Beams"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 1.5, 2.5, -2 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox22" type="CSGBox" parent="Beams"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 1.5, 2.5, -4 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox23" type="CSGBox" parent="Beams"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 1.5, 2.5, 0 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -4 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 3, -4 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox10" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 2, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox11" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 2, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox16" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox17" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox12" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 1, 3, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox13" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 1, 3, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox24" type="CSGBox" parent="Beams"]
+transform = Transform( -0.707107, -0.707107, 0, 0.707107, -0.707107, 0, 0, 0, 1, -1.5, 2.5, -2 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox25" type="CSGBox" parent="Beams"]
+transform = Transform( -0.707107, -0.707107, 0, 0.707107, -0.707107, 0, 0, 0, 1, -1.5, 2.5, -4 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox26" type="CSGBox" parent="Beams"]
+transform = Transform( -0.707107, -0.707107, 0, 0.707107, -0.707107, 0, 0, 0, 1, -1.5, 2.5, 0 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox34" type="CSGBox" parent="Beams"]
+transform = Transform( 3.09086e-08, 3.09086e-08, 1, 0.707107, -0.707107, 0, 0.707107, 0.707107, -4.37114e-08, -1, 2.5, 0.5 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox31" type="CSGBox" parent="Beams"]
+transform = Transform( -0.707107, 0.707107, -4.37114e-08, 7.10543e-15, 6.18172e-08, 1, 0.707107, 0.707107, -4.37114e-08, -1.5, 2, 0.5 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox33" type="CSGBox" parent="Beams"]
+transform = Transform( 0.707107, -0.707107, 1.31134e-07, 6.18172e-08, -1.23634e-07, -1, 0.707107, 0.707107, -4.37114e-08, 1.5, 2, 0.5 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox32" type="CSGBox" parent="Beams"]
+transform = Transform( 3.09086e-08, 3.09086e-08, 1, 0.707107, -0.707107, 0, 0.707107, 0.707107, -4.37114e-08, 1, 2.5, 0.5 )
+width = 0.2
+height = 1.34274
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox27" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -1, 3, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox28" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -1, 3, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox29" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox30" type="CSGBox" parent="Beams"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 2, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox14" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -1, 3, -3 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="CSGBox15" type="CSGBox" parent="Beams"]
+transform = Transform( -4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -1, 3, -1 )
+width = 0.2
+depth = 0.2
+material = SubResource( 1 )
+
+[node name="Floor" type="Spatial" parent="."]
+
+[node name="Floor2" parent="Floor" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -1 )
+
+[node name="Floor3" parent="Floor" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, -1 )
+
+[node name="Floor4" parent="Floor" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, -3 )
+
+[node name="Floor5" parent="Floor" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -3 )
+
+[node name="HalfFloor" parent="Floor" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, 1 )
+
+[node name="HalfFloor2" parent="Floor" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 1 )
+
+[node name="Railings" type="Spatial" parent="."]
+
+[node name="Railing" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -3 )
+
+[node name="Railing2" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -1 )
+
+[node name="Railing3" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2, 0, -3 )
+
+[node name="Railing4" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2, 0, -1 )
+
+[node name="Railing5" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.19209e-07, 0, 1 )
+
+[node name="Railing6" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( 0.424264, 0, 0.707107, 0, 1, 0, -0.424264, 0, 0.707107, 1.525, 0, 0.5 )
+
+[node name="Railing7" parent="Railings" instance=ExtResource( 4 )]
+transform = Transform( 0.424264, 0, -0.707107, 0, 1, 0, 0.424264, 0, 0.707107, -1.475, 0, 0.5 )
+
+[node name="BackWall" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )

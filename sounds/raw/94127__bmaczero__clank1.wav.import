@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/94127__bmaczero__clank1.wav-4c498378cff91c703b7dd03909aae0d0.sample"
+
+[deps]
+
+source_file="res://sounds/raw/94127__bmaczero__clank1.wav"
+dest_files=[ "res://.import/94127__bmaczero__clank1.wav-4c498378cff91c703b7dd03909aae0d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/332668__reitanna__big-thud2.wav-1ebb95197aabb2b4f62daf6ce7dfac0d.sample"
+
+[deps]
+
+source_file="res://sounds/raw/332668__reitanna__big-thud2.wav"
+dest_files=[ "res://.import/332668__reitanna__big-thud2.wav-1ebb95197aabb2b4f62daf6ce7dfac0d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

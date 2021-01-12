@@ -24,6 +24,10 @@ config/name="Virtual Future"
 run/main_scene="res://places/Space.tscn"
 config/icon="res://textures/unused/icon.png"
 
+[autoload]
+
+GeneralSettings="*res://general_settings.gd"
+
 [debug]
 
 gdscript/warnings/return_value_discarded=false

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/146960__zabuhailo__cathisses.wav-1cdfdff6fb36f492a5ec0f266b8ef21d.sample"
+
+[deps]
+
+source_file="res://sounds/raw/146960__zabuhailo__cathisses.wav"
+dest_files=[ "res://.import/146960__zabuhailo__cathisses.wav-1cdfdff6fb36f492a5ec0f266b8ef21d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

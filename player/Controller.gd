@@ -28,6 +28,7 @@ func _ready():
 
 func _physics_process(delta):
 	
+	# pull hand to the controller, minding collisions
 	hand.transform = transform
 	hand.move_and_slide(
 		(translation - hand.translation),
@@ -38,67 +39,57 @@ func _physics_process(delta):
 		false
 	)
 	
-		# Controller velocity
-	# --------------------
-#	if get_is_active():
-#		controller_velocity = Vector3(0, 0, 0)
-#
-#		if prior_controller_velocities.size() > 0:
-#			for vel in prior_controller_velocities:
-#				controller_velocity += vel
-#
-#			# Get the average velocity, instead of just adding them together.
-#			controller_velocity = controller_velocity / prior_controller_velocities.size()
-#
-#		prior_controller_velocities.append((global_transform.origin - prior_controller_position) / delta)
-#
-#		controller_velocity += (global_transform.origin - prior_controller_position) / delta
-#		prior_controller_position = global_transform.origin
-#
-#		if prior_controller_velocities.size() > 30:
-#			prior_controller_velocities.remove(0)
-	
-	
 	# Directional movement
-	# --------------------
-	# NOTE: you may need to change this depending on which VR controllers
-	# you are using and which OS you are on.
-	var trackpad_vector = Vector2(-get_joystick_axis(1), get_joystick_axis(0))
-	var joystick_vector = Vector2(-get_joystick_axis(5), get_joystick_axis(4))
+	# Use only the left controller for moving
+	if name[-1] == "L":
+		var trackpad_vector = Vector2(-get_joystick_axis(1), get_joystick_axis(0))
+		var joystick_vector = Vector2(-get_joystick_axis(5), get_joystick_axis(4))
 
-	if trackpad_vector.length() < CONTROLLER_DEADZONE:
-		trackpad_vector = Vector2(0, 0)
-	else:
-		trackpad_vector = trackpad_vector * ((trackpad_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
+		if trackpad_vector.length() < CONTROLLER_DEADZONE:
+			trackpad_vector = Vector2(0, 0)
+		else:
+			trackpad_vector = trackpad_vector * ((trackpad_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
 
-	if joystick_vector.length() < CONTROLLER_DEADZONE:
-		joystick_vector = Vector2(0, 0)
-	else:
-		joystick_vector = joystick_vector * ((joystick_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
+		if joystick_vector.length() < CONTROLLER_DEADZONE:
+			joystick_vector = Vector2(0, 0)
+		else:
+			joystick_vector = joystick_vector * ((joystick_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
 
-	var forward_direction = camera.global_transform.basis.z.normalized()
-	var right_direction = camera.global_transform.basis.x.normalized()
+		# Change this. Now the movement is based on headset orientation, not controller orientation. Some people including me would prefer other way around.
+		
+		var forward_direction
+		var right_direction
+		
+		if GeneralSettings.HEAD_CONTROLS:
+			forward_direction = camera.global_transform.basis.z.normalized()
+			right_direction = camera.global_transform.basis.x.normalized()
+		else:
+			forward_direction = global_transform.basis.z.normalized()
+			right_direction = global_transform.basis.x.normalized()
 
-	var movement_vector = (trackpad_vector + joystick_vector)
+		var movement_vector = (trackpad_vector + joystick_vector).normalized()
 
-	# Change this. Now the movement is based on headset orientation, not controller orientation. Some people including me would prefer other way around.
-	var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
-	var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
+		var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
+		var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
 
-	movement_forward.y = 0
-	movement_right.y = 0
+		movement_forward.y = 0
+		movement_right.y = 0
 
-	if movement_right.length() > 0 or movement_forward.length() > 0:
-		body.move_and_slide(movement_right + movement_forward)
-		directional_movement = true
-	else:
-		directional_movement = false
-	# --------------------
+		if movement_right.length() > 0 or movement_forward.length() > 0:
+			body.move_and_slide(movement_right + movement_forward)
+			directional_movement = true
+		else:
+			directional_movement = false
+		
+		if joystick_vector.length() != 0:
+			print(joystick_vector)
+
 
 func button_pressed(button_index):
-	print(button_index)
+	print(name[-1], " " , button_index)
 	
 	# resets the player to the starting position. Probably not useful in the final game. Mapped to menu button.
-	if button_index == 14:
-		body.translation = startingpos
+	# NOTE: ACTIVATES ON INDEX KNUCKLES WITH JOYSTICK!! 
+#	if button_index == 14:
+#		body.translation = startingpos
 

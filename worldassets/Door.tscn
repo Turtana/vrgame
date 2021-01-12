@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://worldassets/materials/Door.tres" type="Material" id=1]
 [ext_resource path="res://worldassets/materials/DoorHinge.tres" type="Material" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://worldassets/materials/generic_wall.tres" type="Material" id=5]
 [ext_resource path="res://addons/SIsilicon.3d.text/Label3D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://worldassets/Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sounds/raw/332668__reitanna__big-thud2.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/hiss.wav" type="AudioStream" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.15263, 0.581233, 1 )
@@ -201,4 +203,15 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.24341
 transform = Transform( 2.50343e-07, 0, -1, 0, 1, 0, 1, 0, 2.50343e-07, -0.243112, 0.900323, 0.870996 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Hiss" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+stream = ExtResource( 9 )
+
+[node name="Thud" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+stream = ExtResource( 8 )
+
+[node name="SoundTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="body_exited" from="MotionDetector" to="." method="close_door"]

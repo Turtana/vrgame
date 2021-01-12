@@ -8,18 +8,15 @@ var bred = load("res://worldassets/materials/ButtonRed.tres")
 var bgreen = load("res://worldassets/materials/ButtonGreen.tres")
 
 func _ready():
-	press_position = $Press.translation
-
-func _on_ButtonDetector_body_entered(body):
-	if body.name == "Press":
-		emit_signal("pressed")
-		print("button pressed")
-		
-		$Press/CSGBox.material = bred
-		$Press.linear_velocity = Vector3.ZERO
-		$Press.sleeping = true
-		
+	press_position = $Button.translation
+	
 func reset():
-	$Press.translation = press_position
-	$Press.linear_velocity = Vector3.ZERO
-	$Press/CSGBox.material = bgreen
+	$Button.translation = press_position
+	$Button.material = bgreen
+
+func _on_PressArea_body_entered(body):
+	if body.name == "HandL" or body.name == "HandR":
+		emit_signal("pressed")
+		$Button.material = bred
+		$Button.translation = Vector3(0,0,0.01)
+		# untested. Test it.

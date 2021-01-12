@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://worldassets/materials/generic_wall.tres" type="Material" id=1]
 [ext_resource path="res://textures/walls floors etc/generic_wall_map.png" type="Texture" id=2]
@@ -16,14 +16,8 @@ normal_texture = ExtResource( 2 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.0491015, 0.0535728, 0.036231 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.025, 0.025, 0.025 )
-
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.0491015, 0.0535728, 0.0182685 )
-
-[sub_resource type="BoxShape" id=6]
-extents = Vector3( 0.0398893, 0.040037, 0.0294122 )
 
 [node name="Button" type="Spatial"]
 transform = Transform( -0.99956, 0, 0.0296663, 0, 1, 0, -0.0296663, 0, -0.99956, 0, 0, 0 )
@@ -58,42 +52,17 @@ collision_mask = 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00019896, 0, 0.00670364 )
 shape = SubResource( 2 )
 
-[node name="Press" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00179577, 0, 0.0605058 )
-collision_layer = 17
-collision_mask = 16
-gravity_scale = 0.0
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-
-[node name="CSGBox" type="CSGBox" parent="Press"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000455381, 0, -0.0153433 )
+[node name="Button" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00133846, 0, 0.0450976 )
 width = 0.05
 height = 0.05
 depth = 0.0766679
 material = ExtResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Press"]
+[node name="PressArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00219413, 0, 0.0739279 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PressArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000455381, 0, -0.0153433 )
-shape = SubResource( 4 )
-
-[node name="ButtonDetector" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84026e-05, 0, 0.00264166 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="ButtonDetector"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00128633, 0, -0.0433409 )
-shape = SubResource( 5 )
-
-[node name="ButtonGuardian" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00437594, 0, 0.147441 )
-collision_layer = 16
-collision_mask = 16
-
-[node name="CollisionShape" type="CollisionShape" parent="ButtonGuardian"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000950185, 0, -0.032015 )
-shape = SubResource( 6 )
-[connection signal="body_exited" from="Press" to="." method="_on_Press_body_exited"]
-[connection signal="body_entered" from="ButtonDetector" to="." method="_on_ButtonDetector_body_entered"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="PressArea" to="." method="_on_PressArea_body_entered"]

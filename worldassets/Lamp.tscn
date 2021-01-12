@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+
+[node name="Lamp" type="CSGSphere"]
+radius = 0.1
+radial_segments = 24
+rings = 16
+material = SubResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+shadow_enabled = true
+shadow_bias = 0.05
