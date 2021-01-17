@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/model.fbx-bf92811e61fe2c9ec43d2e69858eecdd.scn"
+path="res://.import/model.fbx-bedfa82eea7c694715be4f3a3a500c4c.scn"
 
 [deps]
 
-source_file="res://models/model.fbx"
-dest_files=[ "res://.import/model.fbx-bf92811e61fe2c9ec43d2e69858eecdd.scn" ]
+source_file="res://models/hand_idle/model.fbx"
+dest_files=[ "res://.import/model.fbx-bedfa82eea7c694715be4f3a3a500c4c.scn" ]
 
 [params]
 

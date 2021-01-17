@@ -1,35 +1,45 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/Hand.gd" type="Script" id=1]
-[ext_resource path="res://models/model.fbx" type="PackedScene" id=2]
+[ext_resource path="res://models/hand_idle/model.fbx" type="PackedScene" id=2]
+[ext_resource path="res://models/hand_grip/model.fbx" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.00861011, 0.0909258, 0.105499 )
+extents = Vector3( 0.0545238, 0.175614, 0.119348 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.0163154, 0.0657859, 0.067477 )
+[sub_resource type="SphereShape" id=2]
 
 [sub_resource type="SphereShape" id=3]
+radius = 0.0619463
 
 [node name="Hand" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.35679, 0.350286, 0, -0.350286, 0.35679, 0.000632178, -0.0113095, -0.0131837 )
+transform = Transform( 0.5, 0, 0, 0, -0.328003, 0.377377, 0, -0.377377, -0.328003, -0.00782054, 0.00868277, 0.0360227 )
 shape = SubResource( 1 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="."]
-transform = Transform( 0.5, 0, 0, 0, -8.14603e-08, -0.499999, 0, 0.499999, -8.14603e-08, 0.000632178, -0.0470255, -0.0517052 )
-shape = SubResource( 2 )
 
 [node name="SleepArea" type="Area" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SleepArea"]
+shape = SubResource( 2 )
+
+[node name="HandOpen" type="Spatial" parent="."]
+transform = Transform( -1.49838e-07, 0.5, -5.42713e-08, 0.359423, 6.99821e-08, -0.347585, -0.347585, -1.43175e-07, -0.359423, 0, -0.00577506, 0.0532562 )
+
+[node name="model" parent="HandOpen" instance=ExtResource( 2 )]
+transform = Transform( 1, -2.84217e-14, 0, 5.68434e-14, 1, -2.84217e-14, 0, 1.42109e-14, 1, 0.61794, -1.81061, -0.400735 )
+
+[node name="HandGrip" type="Spatial" parent="."]
+transform = Transform( -2.09442e-07, 0.5, -5.42713e-08, 0.359422, 1.12829e-07, -0.347585, -0.347585, -1.84611e-07, -0.359422, 0.000250079, 0.0146557, 0.0769772 )
+visible = false
+
+[node name="model" parent="HandGrip" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, -2.84217e-14, 1, 0, 0, 0, 1, 0.622897, -1.8113, -0.341164 )
+
+[node name="GrabArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.016 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GrabArea"]
 shape = SubResource( 3 )
-
-[node name="Handholder" type="Spatial" parent="."]
-transform = Transform( -1.72844e-07, 0.5, 1.09074e-09, 0.00722363, 1.40649e-09, 0.499948, 0.499948, 1.72841e-07, -0.00722363, 0, -0.00506499, -0.0276449 )
-
-[node name="model" parent="Handholder" instance=ExtResource( 2 )]
-transform = Transform( -1.96662e-07, -0.707107, 0.707107, 1, -1.62921e-07, 1.15202e-07, -3.37422e-08, -0.707107, -0.707107, 1.42983, 0.0154248, 1.20587 )

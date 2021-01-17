@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/Controller.gd" type="Script" id=1]
-[ext_resource path="res://models/model.fbx" type="PackedScene" id=2]
+[ext_resource path="res://models/pixelhand/model.fbx" type="PackedScene" id=2]
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.00861011, 0.0408975, 0.0704584 )

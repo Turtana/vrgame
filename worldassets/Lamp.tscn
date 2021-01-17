@@ -12,3 +12,4 @@ material = SubResource( 1 )
 [node name="OmniLight" type="OmniLight" parent="."]
 shadow_enabled = true
 shadow_bias = 0.05
+omni_shadow_mode = 0

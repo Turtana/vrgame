@@ -18,6 +18,7 @@ var startingpos
 func _ready():
 	
 	connect("button_pressed", self, "button_pressed")
+	connect("button_release", self, "button_release")
 	
 	var handname = "Hand" + get_name()[-1]
 	hand = get_parent().get_node(handname)
@@ -84,12 +85,17 @@ func _physics_process(delta):
 		if joystick_vector.length() != 0:
 			print(joystick_vector)
 
-
 func button_pressed(button_index):
 	print(name[-1], " " , button_index)
+	
+	if button_index == 2:
+		hand.grip()
 	
 	# resets the player to the starting position. Probably not useful in the final game. Mapped to menu button.
 	# NOTE: ACTIVATES ON INDEX KNUCKLES WITH JOYSTICK!! 
 #	if button_index == 14:
 #		body.translation = startingpos
 
+func button_release(button_index):
+	if button_index == 2:
+		hand.release()
