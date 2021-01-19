@@ -19,6 +19,8 @@ script = ExtResource( 1 )
 transform = Transform( 0.5, 0, 0, 0, -0.328003, 0.377377, 0, -0.377377, -0.328003, -0.00782054, 0.00868277, 0.0360227 )
 shape = SubResource( 1 )
 
+[node name="HeldObjectCollision" type="CollisionShape" parent="."]
+
 [node name="SleepArea" type="Area" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
@@ -29,7 +31,7 @@ shape = SubResource( 2 )
 transform = Transform( -1.49838e-07, 0.5, -5.42713e-08, 0.359423, 6.99821e-08, -0.347585, -0.347585, -1.43175e-07, -0.359423, 0, -0.00577506, 0.0532562 )
 
 [node name="model" parent="HandOpen" instance=ExtResource( 2 )]
-transform = Transform( 1, -2.84217e-14, 0, 5.68434e-14, 1, -2.84217e-14, 0, 1.42109e-14, 1, 0.61794, -1.81061, -0.400735 )
+transform = Transform( 1, -4.26326e-14, 2.98023e-08, 2.84217e-14, 1, -4.26326e-14, -2.98023e-08, -1.42109e-14, 1, 0.61794, -1.81061, -0.400735 )
 
 [node name="HandGrip" type="Spatial" parent="."]
 transform = Transform( -2.09442e-07, 0.5, -5.42713e-08, 0.359422, 1.12829e-07, -0.347585, -0.347585, -1.84611e-07, -0.359422, 0.000250079, 0.0146557, 0.0769772 )

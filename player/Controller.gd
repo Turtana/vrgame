@@ -86,7 +86,7 @@ func _physics_process(delta):
 			print(joystick_vector)
 
 func button_pressed(button_index):
-	print(name[-1], " " , button_index)
+#	print(name[-1], " " , button_index)
 	
 	if button_index == 2:
 		hand.grip()

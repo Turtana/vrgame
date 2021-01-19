@@ -449,7 +449,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, -
 environment = SubResource( 2 )
 
 [node name="PlayerBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16585, 0.00496554, 0.414369 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85002, 0.00496554, 7.94777 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.843279, 0, -0.537476, 0, 1, 0, 0.537476, 0, -0.843279, 0, 1.45402, 6.21869 )
@@ -460,8 +460,8 @@ transform = Transform( -0.637155, 0, 0.770736, 0, 1, 0, -0.770736, 0, -0.637155,
 [node name="Hum" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 13 )
 stream = ExtResource( 10 )
-unit_db = 10.0
-autoplay = true
+unit_db = 3.0
+max_db = 2.0
 
 [editable path="Lamps/Lamp3"]
 
